@@ -13,7 +13,7 @@
 #import "ASIHTTPRequest.h"
 
 #if TARGET_OS_IPHONE
-#import "Reachability.h"
+#import <PhoneGap/Reachability.h>
 #import "ASIAuthenticationDialog.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 #else
