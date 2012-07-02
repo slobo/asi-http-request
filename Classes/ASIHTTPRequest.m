@@ -13,7 +13,7 @@
 #import "ASIHTTPRequest.h"
 
 #if TARGET_OS_IPHONE
-#import <PhoneGap/Reachability.h>
+#import <Cordova/CDVReachability.h>
 #import "ASIAuthenticationDialog.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 #else
@@ -4656,7 +4656,7 @@ static NSOperationQueue *sharedQueue = nil;
 
 + (void)registerForNetworkReachabilityNotifications
 {
-	[[Reachability reachabilityForInternetConnection] startNotifier];
+	[[CDVReachability reachabilityForInternetConnection] startNotifier];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:kReachabilityChangedNotification object:nil];
 }
 
@@ -4668,7 +4668,7 @@ static NSOperationQueue *sharedQueue = nil;
 
 + (BOOL)isNetworkReachableViaWWAN
 {
-	return ([[Reachability reachabilityForInternetConnection] currentReachabilityStatus] == ReachableViaWWAN);	
+	return ([[CDVReachability reachabilityForInternetConnection] currentReachabilityStatus] == ReachableViaWWAN);	
 }
 
 + (void)reachabilityChanged:(NSNotification *)note
